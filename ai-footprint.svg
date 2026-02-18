@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="1200.000000pt"
+   height="1200.000000pt"
+   viewBox="0 0 1200.000000 1200.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg4"
+   sodipodi:docname="ai-footprint.svg"
+   inkscape:export-filename="ai-footprint.png"
+   inkscape:export-xdpi="30.719999"
+   inkscape:export-ydpi="30.719999"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4">
+    <rect
+       x="303.41578"
+       y="1023.3216"
+       width="1185.3946"
+       height="162.07302"
+       id="rect5" />
+    <rect
+       x="265.72438"
+       y="1126.9729"
+       width="1079.8587"
+       height="346.7609"
+       id="rect4" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="0.530625"
+     inkscape:cx="780.21201"
+     inkscape:cy="803.76914"
+     inkscape:window-width="1920"
+     inkscape:window-height="1123"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <g
+     transform="matrix(0.1,0,0,-0.1,-17.798128,1115.1296)"
+     fill="#000000"
+     stroke="none"
+     id="g4"
+     style="fill:#009e5c;fill-opacity:1">
+    <path
+       d="m 5258,9090 c -73,-18 -212,-97 -259,-147 -86,-89 -153,-219 -179,-348 -20,-96 -18,-329 2,-396 22,-71 80,-158 173,-259 40,-44 79,-96 85,-116 8,-22 11,-68 8,-113 -4,-64 -12,-92 -52,-176 -25,-55 -51,-107 -56,-117 -22,-39 -43,-198 -43,-323 0,-232 52,-384 179,-523 95,-104 157,-150 334,-245 30,-16 60,-33 65,-37 14,-10 227,-80 245,-80 8,0 -33,48 -91,108 -58,59 -121,132 -140,162 -38,59 -119,211 -119,223 0,14 28,6 51,-14 24,-22 97,-70 255,-169 181,-113 285,-225 381,-410 57,-110 75,-155 102,-265 84,-330 40,-566 -155,-825 -75,-100 -160,-186 -269,-274 -110,-90 -224,-176 -231,-176 -7,0 -86,-64 -136,-109 -21,-19 -46,-40 -57,-47 -11,-8 -42,-46 -71,-84 -156,-216 -228,-454 -217,-723 18,-457 288,-749 726,-787 108,-10 133,-9 228,10 192,36 282,80 403,200 167,165 232,348 234,660 1,161 -10,227 -64,395 -42,128 -42,295 -1,456 23,91 57,202 71,234 5,11 21,52 36,90 25,65 142,310 165,345 15,23 115,189 150,248 36,64 159,290 159,295 0,3 13,34 29,69 16,35 36,85 46,113 9,27 20,54 24,60 9,12 34,87 60,180 34,123 44,205 39,336 -4,105 -12,151 -52,303 -76,297 -63,357 100,445 57,31 75,47 102,91 28,47 32,63 32,124 0,249 -256,290 -355,57 -21,-52 -25,-76 -26,-173 -1,-150 -10,-212 -30,-216 -8,-1 -39,23 -69,55 -250,273 -476,462 -638,534 -37,16 -78,36 -92,43 -14,7 -68,26 -120,42 -182,53 -386,32 -605,-61 -169,-73 -222,-80 -266,-36 -26,26 -29,36 -29,91 0,102 35,157 133,207 129,65 191,168 227,376 18,102 21,152 17,250 -5,143 -24,206 -88,297 -80,114 -233,179 -351,150 z M 7237,6028 c -3,-8 -6,-5 -6,6 -1,11 2,17 5,13 3,-3 4,-12 1,-19 z"
+       id="path1"
+       style="fill:#009e5c;fill-opacity:1" />
+    <path
+       d="m 6011,8879 c -45,-18 -82,-51 -119,-107 -43,-66 -55,-98 -77,-207 -18,-90 -14,-153 17,-225 24,-55 49,-84 107,-121 154,-99 351,70 368,315 6,97 -15,202 -53,259 -38,58 -107,97 -168,96 -28,0 -62,-5 -75,-10 z"
+       id="path2"
+       style="fill:#009e5c;fill-opacity:1" />
+    <path
+       d="m 6565,8654 c -120,-62 -198,-246 -180,-425 8,-80 45,-147 105,-187 29,-20 43,-23 80,-18 105,14 227,112 276,224 25,57 26,64 26,154 0,173 -178,319 -307,252 z"
+       id="path3"
+       style="fill:#009e5c;fill-opacity:1" />
+    <path
+       d="m 7055,8178 c -87,-31 -171,-125 -201,-223 -8,-27 -14,-78 -14,-113 0,-155 92,-219 239,-166 66,23 112,70 154,154 28,56 32,75 32,140 -1,108 -25,158 -96,193 -58,29 -69,31 -114,15 z"
+       id="path4"
+       style="fill:#009e5c;fill-opacity:1" />
+  </g>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.75,0,0,0.75,-67.877427,147.94762)"
+     id="text5"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:130.667px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect5);fill:#009e5c;fill-opacity:1;fill-rule:evenodd;stroke-width:2.1;paint-order:stroke fill markers"><tspan
+       x="303.41602"
+       y="1142.6816"
+       id="tspan2"><tspan
+         style="font-weight:bold;-inkscape-font-specification:'BlexMono Nerd Font Bold';fill:#000000"
+         id="tspan1">ai-footprint.js</tspan></tspan></text>
+</svg>
