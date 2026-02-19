@@ -430,8 +430,9 @@ function resolveGridIntensity(input: {
     if (typeof resolved === "number" && resolved > 0) return resolved;
   }
 
-  if (normalizedRegion && DEFAULT_GRID_CARBON_G_PER_KWH[normalizedRegion]) {
-    return DEFAULT_GRID_CARBON_G_PER_KWH[normalizedRegion];
+  if (normalizedRegion) {
+    const intensity = DEFAULT_GRID_CARBON_G_PER_KWH[normalizedRegion];
+    if (typeof intensity === "number") return intensity;
   }
 
   if (input.region) {
@@ -440,7 +441,11 @@ function resolveGridIntensity(input: {
     );
   }
 
-  return DEFAULT_GRID_CARBON_G_PER_KWH.global;
+  return (
+    DEFAULT_GRID_CARBON_G_PER_KWH.global ??
+    BASE_GRID_CARBON_G_PER_KWH.global ??
+    475
+  );
 }
 
 function requirePositive(name: string, value: number): void {
