@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "description": "Deterministic CO2 and energy impact calculator for AI inference calls",
   "license": "MIT",
-  "author": "Your Name <you@example.com>",
-  "homepage": "https://github.com/your-org/ai-footprint#readme",
+  "author": "Eugenio Petullà <eugenio@codeat.it>",
+  "homepage": "https://github.com/EugenioPetulla/ai-footprint#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/ai-footprint.git"
+    "url": "git+https://github.com/EugenioPetulla/ai-footprint"
   },
   "bugs": {
-    "url": "https://github.com/your-org/ai-footprint/issues"
+    "url": "https://github.com/EugenioPetulla/ai-footprint/issues"
   },
   "keywords": [
     "ai",
@@ -23,6 +23,10 @@
     "typescript"
   ],
   "type": "module",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -37,7 +41,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean && cp -R src/data dist/data",
     "lint": "eslint .",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit",
