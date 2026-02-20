@@ -4,7 +4,7 @@
   "description": "Deterministic CO2 and energy impact calculator for AI inference calls",
   "license": "MIT",
   "author": "Eugenio Petullà <eugenio@codeat.it>",
-  "homepage": "https://github.com/EugenioPetulla/ai-footprint#readme",
+  "homepage": "https://eugenioPetulla.github.io/ai-footprint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EugenioPetulla/ai-footprint"
@@ -45,15 +45,22 @@
     "lint": "eslint .",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "docs": "vitepress",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:deploy": "npm run docs:build && gh-pages -d docs/.vitepress/dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/node": "^20.11.30",
     "eslint": "^9.9.0",
+    "gh-pages": "^6.3.0",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0",
+    "vitepress": "^1.6.4",
     "vitest": "^2.0.5"
   }
 }

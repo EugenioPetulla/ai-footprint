@@ -1,0 +1,31 @@
+:root {
+  --vp-c-brand: #0ea5e9;
+  --vp-c-brand-light: #38bdf8;
+  --vp-c-brand-lighter: #7dd3fc;
+  --vp-c-brand-dark: #0284c7;
+  --vp-c-brand-darker: #0369a1;
+  --vp-c-brand-dimm: rgba(14, 165, 233, 0.08);
+}
+
+.custom-block {
+  &.brand {
+    border-color: var(--vp-c-brand);
+  }
+}
+
+.custom-block {
+  &.info {
+    &::before {
+      color: var(--vp-c-brand);
+    }
+  }
+}
+
+.VPSidebarItem.level-1 .text {
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebarItem.level-2 .text {
+  color: var(--vp-c-text-2);
+}

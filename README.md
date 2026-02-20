@@ -2,11 +2,14 @@
   <img src="ai-footprint.png" alt="ai-footprint logo" width="180" />
   <h1>ai-footprint.js</h1>
   <p>Estimates for <strong>energy usage (kWh)</strong> and <strong>CO2 emissions (gCO2)</strong> of AI inference calls.</p>
+  
+  <p><a href="https://eugenioPetulla.github.io/ai-footprint">📖 Documentation</a> | <a href="https://www.npmjs.com/package/ai-footprint">📦 npm</a></p>
 
   <p>
     <a href="https://www.npmjs.com/package/ai-footprint"><img alt="npm version" src="https://img.shields.io/npm/v/ai-footprint?color=0ea5e9&logo=npm" /></a>
     <a href="https://www.npmjs.com/package/ai-footprint"><img alt="npm downloads" src="https://img.shields.io/npm/dm/ai-footprint?color=22c55e&logo=npm" /></a>
-    <a href="https://github.com/"><img alt="license" src="https://img.shields.io/npm/l/ai-footprint?color=64748b" /></a>
+    <a href="https://github.com/EugenioPetulla/ai-footprint"><img alt="license" src="https://img.shields.io/npm/l/ai-footprint?color=64748b" /></a>
+    <a href="https://eugenioPetulla.github.io/ai-footprint"><img alt="documentation" src="https://img.shields.io/badge/Documentation-Online-0ea5e9" /></a>
     <a href="https://www.typescriptlang.org/"><img alt="typescript" src="https://img.shields.io/badge/TypeScript-Ready-3178c6?logo=typescript&logoColor=white" /></a>
   </p>
 </div>
@@ -22,6 +25,12 @@ Most libraries rely on opaque vendor estimates. **ai-footprint** is intentionall
 - Comparing model configurations and batch sizes
 - Batch/weekly/monthly footprint reporting
 - Research or internal cost/impact analysis
+
+---
+
+## Documentation
+
+For comprehensive documentation, including API reference, usage examples, and input parameter guides, visit our [full documentation site](https://eugenioPetulla.github.io/ai-footprint).
 
 ---
 

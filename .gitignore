@@ -29,3 +29,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .npmrc
+
+# Build outputs
+dist/
+docs/.vitepress/dist/
+
+# Documentation cache
+docs/.vitepress/cache/
