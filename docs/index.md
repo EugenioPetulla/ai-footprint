@@ -1,7 +1,7 @@
 # ai-footprint
 
 <div align="center">
-  <img src="../logo.png" alt="ai-footprint logo" width="200" />
+  <img src="/logo.png" alt="ai-footprint logo" width="200" />
   
   <p><strong>Deterministic CO2 and energy impact calculator for AI inference calls</strong></p>
   
