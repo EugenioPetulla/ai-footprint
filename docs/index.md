@@ -187,7 +187,6 @@ The per‑country dataset is sourced from **Our World in Data**:
 
 - 📖 Read the full [documentation](/)
 - 💬 Open an issue on [GitHub](https://github.com/EugenioPetulla/ai-footprint/issues)
-- 📧 Contact: [eugenio@codeat.it](mailto:eugenio@codeat.it)
 
 ---
 
