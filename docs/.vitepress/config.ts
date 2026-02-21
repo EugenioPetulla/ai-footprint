@@ -2,6 +2,7 @@ import DefaultTheme from "vitepress/theme";
 
 /** @type {import('vitepress').UserConfig} */
 export default {
+  base: "/ai-footprint/",
   title: "ai-footprint",
   description:
     "Deterministic CO2 and energy impact calculator for AI inference calls",
