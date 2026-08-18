@@ -95,7 +95,7 @@ console.log(result.energyKwh, result.co2Grams);
 ## Core Concepts
 
 ### What you provide
-- **Hardware**: GPU power draw in watts (average during inference)
+- **Hardware**: GPU power draw in watts (average during inference) and optionally the number of GPUs used in parallel (`gpuCount`)
 - **Model**: parameter count (e.g., 7B, 70B)
 - **Region**: location or explicit grid carbon intensity (gCO2/kWh)
 - **Workload metrics**: based on model type (tokens, seconds, pixels, etc.)
@@ -228,6 +228,23 @@ const result = estimateImpact({
   throughput: { tokensPerSecond: 90 }
 });
 ~~~
+
+### Multi-GPU inference (tensor/pipeline parallelism)
+
+~~~javascript
+import { estimateImpact, usage } from "ai-footprint";
+
+const result = estimateImpact({
+  gpuPowerW: 700,  // Per-GPU average power (e.g., NVIDIA H100)
+  gpuCount: 8,     // 8-way tensor parallel deployment
+  modelParamsB: 405,
+  region: "us",
+  usage: usage.chat(1200, 400),
+  throughput: { tokensPerSecond: 45 }
+});
+~~~
+
+`gpuPowerW` is interpreted as **per-GPU** power; CPU and network power are host-level and are not multiplied by `gpuCount`.
 
 ### Power breakdown (GPU + CPU + network)
 

@@ -1,7 +1,8 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 
-export default [
+export default tseslint.config(
+  { ignores: ["dist/**", "node_modules/**", "docs/**"] },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
@@ -13,6 +14,12 @@ export default [
     },
   },
   {
-    ignores: ["dist/**", "node_modules/**"],
+    files: ["**/*.{js,mjs,cjs}"],
+    ...tseslint.configs.disableTypeChecked,
   },
-];
+  {
+    rules: {
+      "@typescript-eslint/no-redundant-type-constituents": "off",
+    },
+  },
+);

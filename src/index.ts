@@ -157,10 +157,18 @@ function normalizeRegion(region?: RegionInput): RegionCode | undefined {
 
 export interface BaseImpactInputs {
   /**
-   * GPU/accelerator average power draw for inference (W).
+   * GPU/accelerator average power draw for inference (W), per GPU.
    * This should be the average during the request, not peak TDP.
    */
   gpuPowerW: number;
+
+  /**
+   * Number of GPUs/accelerators used in parallel for the request
+   * (e.g., tensor/pipeline parallelism for large models). Default: 1.
+   * gpuPowerW is interpreted as per-GPU power and multiplied by gpuCount.
+   * cpuPowerW and networkPowerW are NOT multiplied (host-level power).
+   */
+  gpuCount?: number;
 
   /**
    * Optional power draw from CPU (W) for the request.
@@ -346,6 +354,7 @@ export interface ImpactInputs extends BaseImpactInputs {
 
 export interface MinimalImpactInputs {
   gpuPowerW: number;
+  gpuCount?: number;
   processingTimeSeconds: number;
   region?: RegionInput;
   gridCarbonIntensityGPerKwh?: number;
@@ -525,13 +534,18 @@ function computeEffectivePowerW(input: ImpactInputs | MinimalImpactInputs): {
   const notes: string[] = [];
   requirePositive("gpuPowerW", input.gpuPowerW);
 
+  const gpuCount = (input as ImpactInputs).gpuCount ?? 1;
+  if (!Number.isInteger(gpuCount) || gpuCount < 1) {
+    throw new Error("gpuCount must be a positive integer.");
+  }
+
   const cpuPowerW = (input as ImpactInputs).cpuPowerW ?? 0;
   const networkPowerW = (input as ImpactInputs).networkPowerW ?? 0;
 
   if (cpuPowerW) requirePositive("cpuPowerW", cpuPowerW);
   if (networkPowerW) requirePositive("networkPowerW", networkPowerW);
 
-  const basePowerW = input.gpuPowerW + cpuPowerW + networkPowerW;
+  const basePowerW = input.gpuPowerW * gpuCount + cpuPowerW + networkPowerW;
 
   const overheadFactor = clamp(
     0.1,
@@ -546,6 +560,7 @@ function computeEffectivePowerW(input: ImpactInputs | MinimalImpactInputs): {
 
   const effectivePowerW = basePowerW * overheadFactor * pue;
 
+  notes.push(`GPU count: ${gpuCount}`);
   notes.push(`Base power: ${basePowerW.toFixed(2)}W`);
   notes.push(`Overhead factor: ${overheadFactor.toFixed(2)}`);
   notes.push(`PUE: ${pue.toFixed(2)}`);
@@ -657,6 +672,7 @@ export function estimateImpactMinimal(
 ): ImpactResult {
   return estimateImpact({
     gpuPowerW: input.gpuPowerW,
+    gpuCount: input.gpuCount,
     processingTimeSeconds: input.processingTimeSeconds,
     region: input.region,
     gridCarbonIntensityGPerKwh: input.gridCarbonIntensityGPerKwh,

@@ -35,6 +35,7 @@ console.log("CO2:", result.co2Grams, "g");
 const result = estimateImpact({
   // Hardware specifications
   gpuPowerW: 350,
+  gpuCount: 8,
   cpuPowerW: 50,
   networkPowerW: 20,
   modelParamsB: 70,
@@ -75,7 +76,7 @@ console.log(result.processingTimeSeconds); // 2.27 s
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `gpuPowerW` | `number` | GPU/accelerator average power draw during inference (watts). This should be the **average** during the request, not peak TDP. |
+| `gpuPowerW` | `number` | GPU/accelerator average power draw during inference (watts), **per GPU**. This should be the **average** during the request, not peak TDP. |
 
 ### Optional Inputs
 
@@ -83,6 +84,7 @@ console.log(result.processingTimeSeconds); // 2.27 s
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
+| `gpuCount` | `number` | Number of GPUs used in parallel for the request (default: 1). `gpuPowerW` is multiplied by this value; `cpuPowerW`/`networkPowerW` are not |
 | `cpuPowerW` | `number` | Optional CPU power draw (watts) |
 | `networkPowerW` | `number` | Optional networking power (watts) |
 | `modelParamsB` | `number` | Model parameter count in billions (informational) |
@@ -175,7 +177,7 @@ The `notes` array contains calculation details for transparency and debugging:
 ## Calculation Formula
 
 ```
-Base Power (W) = gpuPowerW + cpuPowerW + networkPowerW
+Base Power (W) = gpuPowerW × gpuCount + cpuPowerW + networkPowerW
 
 Effective Power (W) = Base Power × overheadFactor × pue
 

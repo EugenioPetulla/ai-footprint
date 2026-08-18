@@ -167,7 +167,7 @@ console.log("CO2:", result.co2Grams, "g");
 ## Effect on Calculation
 
 ```
-Base Power (W) = gpuPowerW + cpuPowerW + networkPowerW
+Base Power (W) = gpuPowerW × gpuCount + cpuPowerW + networkPowerW
 
 Effective Power (W) = Base Power × overheadFactor × pue
 

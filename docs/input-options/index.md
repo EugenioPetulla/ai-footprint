@@ -12,9 +12,9 @@ ai-footprint accepts a flexible configuration object with required and optional 
 
 **Type**: `number` (required)
 
-GPU/accelerator average power draw during inference in watts.
+GPU/accelerator average power draw during inference in watts, **per GPU**.
 
-**Important**: Use the **average** power during the request, not peak TDP.
+**Important**: Use the **average** power during the request, not peak TDP. If the model is served across multiple GPUs, provide the per-GPU power here and set [`gpuCount`](#gpucount).
 
 ```javascript
 const result = estimateImpact({
@@ -27,6 +27,25 @@ const result = estimateImpact({
 ---
 
 ## Hardware & Model Inputs
+
+### gpuCount
+
+**Type**: `number` (optional)
+
+**Default**: 1
+
+Number of GPUs/accelerators used in parallel for the request (e.g., tensor/pipeline parallelism for large models).
+
+`gpuPowerW` is interpreted as **per-GPU** power and multiplied by `gpuCount`. `cpuPowerW` and `networkPowerW` are **not** multiplied, since they represent host-level power shared across the accelerators.
+
+```javascript
+estimateImpact({
+  gpuPowerW: 400,  // Per-GPU average power (e.g., NVIDIA H100)
+  gpuCount: 8,     // 8-way tensor parallel deployment
+  region: "eu",
+  usage: usage.chat(1000, 200)
+});
+```
 
 ### cpuPowerW
 
